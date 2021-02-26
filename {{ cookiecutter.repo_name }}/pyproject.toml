@@ -1,0 +1,43 @@
+[tool.nbqa.config]
+isort = "pyproject.toml"
+black = "pyproject.toml"
+
+[tool.nbqa.mutate]
+isort = 1
+black = 1
+pyupgrade = 1
+
+[tool.nbqa.addopts]
+isort = ["--treat-comment-as-code", "# %%"]
+pyupgrade = ["--py38-plus"]
+
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = false
+ignore-magic = false
+ignore-semiprivate = false
+ignore-private = false
+ignore-property-decorators = false
+ignore-module = true
+fail-under = 90
+exclude = ["setup.py", "docs", "build"]
+ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*"]
+verbose = 0
+quiet = false
+whitelist-regex = []
+color = true
+
+[tool.isort]
+profile = "black"
+line_length = 88
+force_grid_wrap = 0
+multi_line_output = 3
+include_trailing_comma = true
+use_parentheses = true
+indent = '    '
+skip = ['.tox', '.venv', 'build', 'dist']
+extra_standard_library = ['setuptools', 'pkg_resources']
+known_test = 'pytest'
+known_first_party = 'home_credit_default_risk'
+sections = ['FUTURE', 'STDLIB', 'TEST', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLDER']
+default_section = 'THIRDPARTY'
