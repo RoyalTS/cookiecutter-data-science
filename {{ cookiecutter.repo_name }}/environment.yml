@@ -1,0 +1,21 @@
+name: {{ cookiecutter.repo_name }}
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>3.8
+  - click
+  - pandas
+  - numpy
+  - jupyterlab
+  - altair
+  - seaborn
+  - scikit-learn
+  - dask
+  - dask-ml
+  - xgboost
+  - dalex
+  - ipywidgets[version='>=7.5']
+  - pre_commit
+  - pip:
+    - memo

@@ -1,17 +1,12 @@
-{{cookiecutter.project_name}}
-==============================
+# {{cookiecutter.project_name}}
 
 {{cookiecutter.description}}
 
-Project Organization
-------------
+## Project Organization
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
     │
@@ -19,17 +14,14 @@ Project Organization
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering) and a short `_` delimited description, e.g. `1.0_initial_data_exploration`.
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
+    ├── environment.yml    <- The environment file for reproducing the analysis environment, e.g.
+    │                         generated with `conda export > environment.yml`
     │
     ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     ├── src                <- Source code for use in this project.
@@ -41,17 +33,27 @@ Project Organization
     │   ├── features       <- Scripts to turn raw data into features for modeling
     │   │   └── build_features.py
     │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
+    │   └── models         <- Scripts to train models and then use trained models to make
+    │       │                 predictions
+    │       ├── predict_model.py
+    │       └── train_model.py
     │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+    ├── .pre-commit-config.yaml  <- [pre-commit](https://pre-commit.com/) config
+    │
+    └── pyproject.toml      <- Python project settings
+
+## Setup
+
+```sh
+conda env create -f environment.yml
+pip install -e .
+```
+
+```sh
+pre-commit install
+```
+
+## Acknowledgements
 
 
---------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+Project based on a [fork](https://github.com/RoyalTS/cookiecutter-data-science) of the [cookiecutter data science project template](https://drivendata.github.io/cookiecutter-data-science/).
