@@ -34,7 +34,7 @@
     │   │   └── build_features.py
     │   │
     │   └── models               <- Scripts to train models and then use trained models to make
-    │       │                 predictions
+    │       │                       predictions
     │       ├── predict_model.py
     │       └── train_model.py
     │
