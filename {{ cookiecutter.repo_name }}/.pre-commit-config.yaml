@@ -104,6 +104,12 @@ repos:
   - id: nbqa-isort
     additional_dependencies: [isort]
 
+- repo: https://github.com/jendrikseipp/vulture
+  rev: 'v2.3'
+  hooks:
+  - id: vulture
+    description: find dead code
+
 # R-related hooks
 - repo: https://github.com/lorenzwalthert/precommit
   rev: v0.1.3
