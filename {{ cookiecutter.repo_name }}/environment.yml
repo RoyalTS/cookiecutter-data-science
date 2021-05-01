@@ -9,13 +9,16 @@ dependencies:
   - numpy
   - jupyterlab
   - altair
+  - matplotlib
   - seaborn
   - scikit-learn
   - dask
   - dask-ml
+  - pytest
   - xgboost
-  - dalex
   - ipywidgets[version='>=7.5']
   - pre_commit
+  - tox
   - pip:
     - memo
+    - -e .
