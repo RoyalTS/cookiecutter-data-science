@@ -109,6 +109,12 @@ repos:
   - id: parsable-R
   - id: no-browser-statement
 
+# bash-related hooks
+- repo: https://github.com/openstack/bashate
+  rev: 2.0.0
+  hooks:
+    - id: bashate
+
 - repo: meta
   hooks:
   # - id: check-hooks-apply
