@@ -103,11 +103,19 @@ repos:
   rev: v0.1.3
   hooks:
   - id: style-files
+    args: [--style_pkg=styler, --style_fun=tidyverse_style]
   - id: spell-check
     files: '(.*/|)\.(Rmd|R)$'
     args: [--lang=en-US]
   - id: parsable-R
   - id: no-browser-statement
+  # Checks if packages used with the pkgname::fun() syntax are listed in your DESCRIPTION file
+  - id: deps-in-desc
+  # A hook to run usethis::use_tidy_description() to ensure dependencies are ordered alphabetically and fields are in standard order.
+  - id: use-tidy-description
+  # A hook to run lintr::lint() to check that R files are lint free
+  # - id: lintr
+  - id: roxygenize
 
 # bash-related hooks
 - repo: https://github.com/openstack/bashate
